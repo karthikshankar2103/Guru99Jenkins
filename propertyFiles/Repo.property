@@ -1,0 +1,8 @@
+URL = http://demo.guru99.com/telecom/index.html
+browser = Chrome
+addCustomerURL = http://demo.guru99.com/telecom/addcustomer.php
+addCustomerTitle = Guru99 Telecom Add Customer
+addTarrifPlanTitle = Guru99 telecom
+addTaffirPlanToCustomerTitle = Guru99 Add Tariff Plan to Customer
+payBillTitle = Guru99 Telecom Billing
+
