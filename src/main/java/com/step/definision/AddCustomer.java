@@ -14,6 +14,7 @@ public class AddCustomer {
 	static WebDriver driver;
 	@Given("^launch the url$")
 	public void launch_the_url() throws Throwable {
+	
 		UtileClass ut = new UtileClass(driver);
 		UtileClass.browserLaunch(UtileClass.readPro("browser"));
 		UtileClass.launchUrl(UtileClass.readPro("addCustomerURL"));

@@ -15,8 +15,7 @@ Feature: AddCustomers page check
     Then click the reset button
     Then checks the textboxs are empty
 
-  Scenario Outline: 
-    : user gives 5 customer number details
+  Scenario Outline: user gives 5 customer number details
 
     Then User enters the details "<firstname>" "<lastname>" "<email>" "<address>" "<mobnum>"
     Then click the button
