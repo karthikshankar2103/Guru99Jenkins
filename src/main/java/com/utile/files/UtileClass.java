@@ -1,6 +1,5 @@
 package com.utile.files;
 
-import org.testng.asserts.SoftAssert;
 
 import com.page.repo.AddCustomerPOM;
 import com.page.repo.HomePagePOM;
@@ -21,6 +20,7 @@ import org.openqa.selenium.firefox.FirefoxDriver;
 import org.openqa.selenium.support.PageFactory;
 import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.WebDriverWait;
+import org.testng.asserts.SoftAssert;
 
 public class UtileClass  {
 	
