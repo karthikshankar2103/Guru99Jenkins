@@ -1,34 +1,30 @@
 package com.utile.files;
 
+import java.io.File;
+import java.io.FileInputStream;
+import java.util.Properties;
+
+import org.openqa.selenium.By;
+import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.chrome.ChromeDriver;
+import org.openqa.selenium.firefox.FirefoxDriver;
+import org.openqa.selenium.support.ui.ExpectedConditions;
+import org.openqa.selenium.support.ui.WebDriverWait;
+import org.testng.Assert;
 
 import com.page.repo.AddCustomerPOM;
 import com.page.repo.HomePagePOM;
 
 import io.github.bonigarcia.wdm.WebDriverManager;
 
-import java.io.File;
-import java.io.FileInputStream;
-import java.io.FileNotFoundException;
-import java.io.IOException;
-import java.util.Properties;
+public class UtileClass {
 
-import org.openqa.selenium.By;
-import org.openqa.selenium.WebDriver;
-import org.openqa.selenium.WebElement;
-import org.openqa.selenium.chrome.ChromeDriver;
-import org.openqa.selenium.firefox.FirefoxDriver;
-import org.openqa.selenium.support.PageFactory;
-import org.openqa.selenium.support.ui.ExpectedConditions;
-import org.openqa.selenium.support.ui.WebDriverWait;
-
-public class UtileClass  {
-	
 	static WebDriver driver;
 	public static AddCustomerPOM addCustomer;
-	public static HomePagePOM homePage;
 	static Properties pro;
 	static File file;
 	static FileInputStream fi;
+	public static HomePagePOM homePage;
 
 	public UtileClass(WebDriver driver) {
 		this.driver = driver;
@@ -41,14 +37,14 @@ public class UtileClass  {
 		file = new File("C:\\Users\\Karthik Shankar\\eclipse-workspace\\Guru99Framework\\propertyFiles\\Repo.property");
 		try {
 			fi = new FileInputStream(file);
-		} catch (FileNotFoundException e) {
+		} catch (Exception e) {
 			// TODO Auto-generated catch block
 			e.printStackTrace();
 		}
 
 		try {
 			pro.load(fi);
-		} catch (IOException e) {
+		} catch (Exception e) {
 			// TODO Auto-generated catch block
 			e.printStackTrace();
 		}
@@ -78,7 +74,8 @@ public class UtileClass  {
 
 	public static void click(String val) {
 
-		driver.findElement(By.xpath(val)).click();;
+		driver.findElement(By.xpath(val)).click();
+		;
 	}
 
 	public static void sendKeys(String val, String keys) {
@@ -92,7 +89,7 @@ public class UtileClass  {
 	}
 
 	public static boolean isDisplayed(String val) {
-		WebDriverWait wait =  new WebDriverWait(driver, 20);
+		WebDriverWait wait = new WebDriverWait(driver, 20);
 		wait.until(ExpectedConditions.visibilityOf(driver.findElement(By.xpath(val))));
 		boolean displayed = driver.findElement(By.xpath(val)).isDisplayed();
 		return displayed;
@@ -111,8 +108,7 @@ public class UtileClass  {
 	}
 
 	public static void assertion(String keys, String title) {
-		assertEquals(keys, title);
-
+		Assert.assertEquals(keys, title);
 
 	}
 

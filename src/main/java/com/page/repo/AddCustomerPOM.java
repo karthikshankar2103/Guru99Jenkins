@@ -6,8 +6,8 @@ public class AddCustomerPOM {
 	static WebDriver driver;
 
 	public static  String done = "//label[@for='done']";
-	public static   String pending = "//label[@for='pending']";
-	public static   String firstName = "//*[@name='fname']";
+	public static  String pending = "//label[@for='pending']";
+	public static  String firstName = "//*[@name='fname']";
 	public static   String lastName = "//*[@name='lname']";
 	public static   String email = "//*[@name='emailid']";
 	public static   String address = "//*[@name='addr']";
