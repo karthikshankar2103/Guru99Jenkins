@@ -20,7 +20,6 @@ import org.openqa.selenium.firefox.FirefoxDriver;
 import org.openqa.selenium.support.PageFactory;
 import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.WebDriverWait;
-import org.testng.asserts.SoftAssert;
 
 public class UtileClass  {
 	
@@ -112,19 +111,15 @@ public class UtileClass  {
 	}
 
 	public static void assertion(String keys, String title) {
-		SoftAssert so = new SoftAssert();
-		so.assertEquals(keys, title);
+		assertEquals(keys, title);
 
-		so.assertAll();
 
 	}
 
 	public static void assertTrue(boolean flag) {
 
-		SoftAssert so = new SoftAssert();
-		so.assertTrue(flag);
+		assertTrue(flag);
 
-		so.assertAll();
 	}
 
 }
