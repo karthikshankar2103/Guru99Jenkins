@@ -6,29 +6,41 @@ import java.util.Properties;
 
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.WebElement;
 import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.firefox.FirefoxDriver;
 import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.WebDriverWait;
 import org.testng.Assert;
+import org.testng.asserts.SoftAssert;
 
 import com.page.repo.AddCustomerPOM;
 import com.page.repo.HomePagePOM;
 
 import io.github.bonigarcia.wdm.WebDriverManager;
 
-public class UtileClass {
+public class UtileClass  {
 
-	static WebDriver driver;
+	public static WebDriver driver;
 	public static AddCustomerPOM addCustomer;
 	static Properties pro;
 	static File file;
 	static FileInputStream fi;
 	public static HomePagePOM homePage;
 
-	public UtileClass(WebDriver driver) {
-		this.driver = driver;
+	public static void launch() {
+		WebDriverManager.chromedriver().setup();
+		driver = new ChromeDriver();
+		driver.get(UtileClass.readPro("URL"));
+		driver.manage().window().maximize();
+		
 
+	}
+
+	public static WebElement waitForTheElement( WebElement element) {
+		WebDriverWait wait = new WebDriverWait(driver, 20);
+		WebElement until = wait.until(ExpectedConditions.elementToBeClickable(element));
+		return until;
 	}
 
 	public static String readPro(String key) {
@@ -53,7 +65,7 @@ public class UtileClass {
 
 	}
 
-	public static void browserLaunch(String browser) {
+	public static void browserLaunch(String browser, String url) {
 
 		if (browser.equalsIgnoreCase("Chrome")) {
 			WebDriverManager.chromedriver().setup();
@@ -64,6 +76,8 @@ public class UtileClass {
 			WebDriverManager.firefoxdriver().setup();
 			driver = new FirefoxDriver();
 		}
+
+		driver.get(url);
 
 	}
 
@@ -101,15 +115,17 @@ public class UtileClass {
 
 	}
 
-	public static String getTitle() {
+	public static void verifyTitle(String actual) {
+		SoftAssert sa = new SoftAssert();
 		String title = driver.getTitle();
-		return title;
-
+		sa.assertEquals(actual, title);
+		sa.assertAll();
 	}
 
 	public static void assertion(String keys, String title) {
-		Assert.assertEquals(keys, title);
-
+		SoftAssert sa = new SoftAssert();
+		sa.assertEquals(keys, title);
+		sa.assertAll();
 	}
 
 	public static void assertTrue(boolean flag) {

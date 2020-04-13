@@ -1,20 +1,49 @@
 package com.page.repo;
 
 import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.WebElement;
+import org.openqa.selenium.support.FindBy;
 
 public class AddCustomerPOM {
 	static WebDriver driver;
 
-	public static  String done = "//label[@for='done']";
-	public static  String pending = "//label[@for='pending']";
-	public static  String firstName = "//*[@name='fname']";
-	public static   String lastName = "//*[@name='lname']";
-	public static   String email = "//*[@name='emailid']";
-	public static   String address = "//*[@name='addr']";
-	public static   String mobileNumber = "//*[@name='telephoneno']";
-	public static   String sumit = "//*[@name='submit']";
-	public static   String reset = "//*[@value='Reset']";
-	public static   String customerID = "//h3";
-	public static   String home = "//a[@class='button']";
+	@FindBy(xpath = "//label[@for='done']")
+	public static WebElement done;
 
+	@FindBy(xpath = "//label[@for='pending']")
+	public static WebElement pending;
+
+	@FindBy(xpath = "//*[@name='fname']")
+	public static WebElement firstName;
+
+	@FindBy(xpath = "//*[@name='lname']")
+	public static WebElement lastName;
+
+	@FindBy(xpath = "//*[@name='emailid']")
+	public static WebElement email;
+
+	@FindBy(xpath = "//*[@name='addr']")
+	public static WebElement address;
+
+	@FindBy(xpath = "//*[@name='telephoneno']")
+	public static WebElement mobileNumber;
+
+	@FindBy(xpath = "//*[@name='submit']")
+	public static WebElement sumit;
+
+	@FindBy(xpath = "//*[@value='Reset']")
+	public static WebElement reset;
+
+	@FindBy(xpath = "//h3")
+	public static WebElement customerID;
+
+	@FindBy(xpath = "//a[@class='button']")
+	public static WebElement home;
+
+	private static void verifyTheLogo() {
+		
+		
+	}
+	
+	
 }
