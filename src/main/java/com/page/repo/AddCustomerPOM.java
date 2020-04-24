@@ -4,8 +4,15 @@ import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
 
+import com.utile.files.UtileClass;
+
 public class AddCustomerPOM {
 	static WebDriver driver;
+
+	public AddCustomerPOM(WebDriver driver) {
+		this.driver = driver;
+		
+	}
 
 	@FindBy(xpath = "//label[@for='done']")
 	public static WebElement done;
@@ -40,10 +47,16 @@ public class AddCustomerPOM {
 	@FindBy(xpath = "//a[@class='button']")
 	public static WebElement home;
 
-	private static void verifyTheLogo() {
-		
-		
+	public static void passTheDatas(String fname, String lname, String mailId, String mbl) {
+		UtileClass.waitForTheElement(done).click();
+		UtileClass.waitForTextBoxEnable(firstName, fname);
+		UtileClass.waitForTextBoxEnable(lastName, lname);
+		UtileClass.waitForTextBoxEnable(email, mailId);
+		UtileClass.waitForTextBoxEnable(mobileNumber, mbl);
+		UtileClass.waitForTheElement(sumit).click();
+		UtileClass.alertIsPresent().accept();
 	}
 	
 	
+
 }

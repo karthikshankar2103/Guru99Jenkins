@@ -17,7 +17,7 @@ public class HomePageClass extends UtileClass {
 
 	HomePagePOM homePage = new HomePagePOM(driver);
 
-	@Given("^verify the logo verify the image is present or not$")
+	@Given("^the user verifys the image and logo$")
 	public void verify_the_logo_verify_the_image_is_present_or_not() throws Throwable {
 		homePage = PageFactory.initElements(driver, HomePagePOM.class);
 		homePage.verifyLogoAndImage();

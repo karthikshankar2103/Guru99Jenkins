@@ -4,21 +4,20 @@ Feature: AddCustomers page check
     Given launch the url
 
   Scenario: User missed to enter some details
-    Then enter the details
+    When the user enter the details
       | Karthik | Shankar | karthikshankar@gmail.com | 1234567890 |
-    Then click the button
-    Then The checks wheather the alert is present or not
+    And click the button
+    Then checks wheather the alert is present or not
 
   Scenario: User checks the reset button
-    Then enter the details
+    When the user enter the details
       | Karthik | Shankar | karthikshankar@gmail.com | 1234567890 |
-    Then click the reset button
-    Then checks the textboxs are empty
+    And click the reset button
+    Then checks wheather the textbox is empty or not
 
   Scenario Outline: user gives 5 customer number details
-
-    Then User enters the details "<firstname>" "<lastname>" "<email>" "<address>" "<mobnum>"
-    Then click the button
+    When User enters the details "<firstname>" "<lastname>" "<email>" "<address>" "<mobnum>"
+    And click the button
     Then get the customer id number
 
     Examples: 

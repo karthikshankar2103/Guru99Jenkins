@@ -4,6 +4,7 @@ import java.io.File;
 import java.io.FileInputStream;
 import java.util.Properties;
 
+import org.openqa.selenium.Alert;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
@@ -27,12 +28,18 @@ public class UtileClass {
 	static File file;
 	static FileInputStream fi;
 	public static HomePagePOM homePage;
+	public static WebDriverWait wait = new WebDriverWait(driver, 20);
 
 	public static void launch() {
 		WebDriverManager.chromedriver().setup();
 		driver = new ChromeDriver();
 		driver.get(UtileClass.readPro("URL"));
 		driver.manage().window().maximize();
+
+	}
+
+	public static Alert alertIsPresent() {
+	return	wait.until(ExpectedConditions.alertIsPresent());
 
 	}
 
@@ -112,6 +119,15 @@ public class UtileClass {
 		driver.findElement(By.xpath(val)).sendKeys(keys);
 	}
 
+	public static void waitForTextBoxEnable(WebElement ele, String value) {
+		wait.until(ExpectedConditions.visibilityOf(ele)).sendKeys(value);
+
+	}
+
+	public static void sendKeys(WebElement val, String keys) {
+		val.sendKeys(keys);
+	}
+
 	public static String getText(String val) {
 		String text = driver.findElement(By.xpath(val)).getText();
 		return text;
@@ -119,7 +135,6 @@ public class UtileClass {
 	}
 
 	public static boolean isDisplayed(String val) {
-		WebDriverWait wait = new WebDriverWait(driver, 20);
 		wait.until(ExpectedConditions.visibilityOf(driver.findElement(By.xpath(val))));
 		boolean displayed = driver.findElement(By.xpath(val)).isDisplayed();
 		return displayed;
