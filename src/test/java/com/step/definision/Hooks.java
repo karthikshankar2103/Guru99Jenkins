@@ -8,6 +8,7 @@ import org.openqa.selenium.OutputType;
 import org.openqa.selenium.TakesScreenshot;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
+import org.testng.annotations.Parameters;
 
 import com.page.repo.HomePagePOM;
 import com.utile.files.UtileClass;
@@ -19,7 +20,7 @@ import io.github.bonigarcia.wdm.WebDriverManager;
 
 public class Hooks {
 
-	@Before
+@Before
 	public static void launch() {
 		UtileClass.launch();
 	}

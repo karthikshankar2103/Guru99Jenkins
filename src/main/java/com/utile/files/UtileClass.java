@@ -19,7 +19,7 @@ import com.page.repo.HomePagePOM;
 
 import io.github.bonigarcia.wdm.WebDriverManager;
 
-public class UtileClass  {
+public class UtileClass {
 
 	public static WebDriver driver;
 	public static AddCustomerPOM addCustomer;
@@ -33,11 +33,27 @@ public class UtileClass  {
 		driver = new ChromeDriver();
 		driver.get(UtileClass.readPro("URL"));
 		driver.manage().window().maximize();
-		
 
 	}
 
-	public static WebElement waitForTheElement( WebElement element) {
+	public static void launch(String browser, String url) throws InterruptedException {
+		Thread.sleep(3000);
+		if (browser.equalsIgnoreCase("Chrome")) {
+			WebDriverManager.chromedriver().setup();
+			driver = new ChromeDriver();
+			driver.get(url);
+			driver.manage().window().maximize();
+		} else if (browser.equalsIgnoreCase("FF")) {
+			WebDriverManager.firefoxdriver().setup();
+			driver = new FirefoxDriver();
+			driver.get(url);
+			driver.manage().window().maximize();
+
+		}
+
+	}
+
+	public static WebElement waitForTheElement(WebElement element) {
 		WebDriverWait wait = new WebDriverWait(driver, 20);
 		WebElement until = wait.until(ExpectedConditions.elementToBeClickable(element));
 		return until;

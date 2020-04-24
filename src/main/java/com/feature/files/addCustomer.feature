@@ -3,13 +3,13 @@ Feature: AddCustomers page check
   Background: 
     Given launch the url
 
-  Scenario: User enter to miss some details
+  Scenario: User missed to enter some details
     Then enter the details
       | Karthik | Shankar | karthikshankar@gmail.com | 1234567890 |
     Then click the button
     Then The checks wheather the alert is present or not
 
-  Scenario: User check the reset button
+  Scenario: User checks the reset button
     Then enter the details
       | Karthik | Shankar | karthikshankar@gmail.com | 1234567890 |
     Then click the reset button
