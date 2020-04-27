@@ -1,3 +1,4 @@
+@AddCustomer
 Feature: AddCustomers page check
 
   Background: 

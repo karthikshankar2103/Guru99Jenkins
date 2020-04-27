@@ -1,8 +1,4 @@
 -------------------------------------------------------------------------------
 Test set: TestSuite
 -------------------------------------------------------------------------------
-Tests run: 1, Failures: 1, Errors: 0, Skipped: 0, Time elapsed: 6.235 s <<< FAILURE! - in TestSuite
-com.test.runner.RunnerTest.feature  Time elapsed: 1.328 s  <<< FAILURE!
-cucumber.runtime.CucumberException: cucumber.runtime.CucumberException: Hooks must declare 0 or 1 arguments. public static void com.step.definision.Hooks.launch(java.lang.String,java.lang.String) throws java.lang.InterruptedException
-Caused by: cucumber.runtime.CucumberException: Hooks must declare 0 or 1 arguments. public static void com.step.definision.Hooks.launch(java.lang.String,java.lang.String) throws java.lang.InterruptedException
-
+Tests run: 1, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 8.833 s - in TestSuite

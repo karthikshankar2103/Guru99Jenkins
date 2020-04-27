@@ -8,7 +8,9 @@ import org.openqa.selenium.support.PageFactory;
 import com.utile.files.UtileClass;
 
 public class HomePagePOM {
-	static WebDriver driver;
+	UtileClass utileClass = new UtileClass();
+
+	WebDriver driver;
 
 	public HomePagePOM(WebDriver driver) {
 		this.driver = driver;
@@ -17,44 +19,44 @@ public class HomePagePOM {
 	}
 
 	@FindBy(xpath = "//a[@class='logo']")
-	public static WebElement guru99Logo;
+	public WebElement guru99Logo;
 
 	@FindBy(xpath = "//img[@src='images/pic01.jpg']")
-	public static WebElement guru99Img;
+	public WebElement guru99Img;
 
 	@FindBy(xpath = "//*[@class='flex-item left']//a[text()='Add Customer']")
-	public static WebElement addCustomer;
+	public WebElement addCustomer;
 
 	@FindBy(xpath = "//*[@class='flex-item right']//a[text()='Add Tariff Plan']")
-	public static WebElement addTarrifPlan;
+	public WebElement addTarrifPlan;
 
 	@FindBy(xpath = "//div//a[text()='Add Tariff Plan to Customer']")
-	public static WebElement addTaffirPlanToCustomer;
+	public WebElement addTaffirPlanToCustomer;
 
 	@FindBy(xpath = "//div//a[text()='Pay Billing']")
-	public static WebElement payBill;
+	public WebElement payBill;
 
-	public static void verifyLogoAndImage() {
-		UtileClass.waitForTheElement(guru99Logo).isDisplayed();
-		UtileClass.waitForTheElement(guru99Img).isDisplayed();
+	public void verifyLogoAndImage() {
+		utileClass.waitForTheElement(guru99Logo).isDisplayed();
+		utileClass.waitForTheElement(guru99Img).isDisplayed();
 		System.out.println("Logo and Image is Displayed");
 	}
 
-	public static void checkAllTheLinks() {
-		UtileClass.waitForTheElement(addCustomer).click();
-		UtileClass.verifyTitle(UtileClass.readPro("addCustomerTitle"));
+	public void checkAllTheLinks() {
+		utileClass.waitForTheElement(addCustomer).click();
+		utileClass.verifyTitle(utileClass.readPro("addCustomerTitle"));
 
-		UtileClass.waitForTheElement(guru99Logo).click();
-		UtileClass.waitForTheElement(addTarrifPlan).click();
-		UtileClass.verifyTitle(UtileClass.readPro("addTarrifPlanTitle"));
-		UtileClass.waitForTheElement(guru99Logo).click();
-		UtileClass.waitForTheElement(addTaffirPlanToCustomer).click();
-		UtileClass.verifyTitle(UtileClass.readPro("addTaffirPlanToCustomerTitle"));
-		UtileClass.waitForTheElement(guru99Logo).click();
+		utileClass.waitForTheElement(guru99Logo).click();
+		utileClass.waitForTheElement(addTarrifPlan).click();
+		utileClass.verifyTitle(utileClass.readPro("addTarrifPlanTitle"));
+		utileClass.waitForTheElement(guru99Logo).click();
+		utileClass.waitForTheElement(addTaffirPlanToCustomer).click();
+		utileClass.verifyTitle(utileClass.readPro("addTaffirPlanToCustomerTitle"));
+		utileClass.waitForTheElement(guru99Logo).click();
 
-		UtileClass.waitForTheElement(payBill).click();
-		UtileClass.verifyTitle(UtileClass.readPro("payBillTitle"));
-		UtileClass.waitForTheElement(guru99Logo).click();
+		utileClass.waitForTheElement(payBill).click();
+		utileClass.verifyTitle(utileClass.readPro("payBillTitle"));
+		utileClass.waitForTheElement(guru99Logo).click();
 
 		System.out.println("All links Works properly");
 	}

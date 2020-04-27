@@ -6,30 +6,32 @@ import java.io.IOException;
 import org.apache.commons.io.FileUtils;
 import org.openqa.selenium.OutputType;
 import org.openqa.selenium.TakesScreenshot;
-import org.openqa.selenium.WebDriver;
-import org.openqa.selenium.chrome.ChromeDriver;
-import org.testng.annotations.Parameters;
-
-import com.page.repo.HomePagePOM;
 import com.utile.files.UtileClass;
 
 import cucumber.api.Scenario;
 import cucumber.api.java.After;
 import cucumber.api.java.Before;
-import io.github.bonigarcia.wdm.WebDriverManager;
 
 public class Hooks {
 
-@Before
-	public static void launch() {
-		UtileClass.launch();
+	UtileClass utileClass = new UtileClass();
+
+	@Before(value = "@AddCustomer")
+	public void launchBrowser() {
+		utileClass.launch("chrome");
+	}
+
+	@Before(value = "@tariffPlan")
+	public void launcher() {
+		utileClass.launch("chrome");
+		utileClass.launchURL(utileClass.readPro("URL"));
 	}
 
 	@After
 	public void close(Scenario scene) {
 
 		if (scene.isFailed()) {
-			TakesScreenshot ts = (TakesScreenshot) UtileClass.driver;
+			TakesScreenshot ts = (TakesScreenshot) utileClass.driver;
 			File screenshotAs = ts.getScreenshotAs(OutputType.FILE);
 			try {
 				FileUtils.copyFile(screenshotAs, new File("./ScreenShot/failedTestCase/" + scene.getName() + ".png"));
@@ -39,7 +41,7 @@ public class Hooks {
 			}
 
 		} else {
-			TakesScreenshot ts = (TakesScreenshot) UtileClass.driver;
+			TakesScreenshot ts = (TakesScreenshot) utileClass.driver;
 
 			File screenshotAs = ts.getScreenshotAs(OutputType.FILE);
 			try {
@@ -51,6 +53,6 @@ public class Hooks {
 			}
 
 		}
-
+		utileClass.driver.quit();
 	}
 }

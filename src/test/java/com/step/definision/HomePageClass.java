@@ -3,7 +3,6 @@ package com.step.definision;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.support.PageFactory;
 
-
 import com.page.repo.HomePagePOM;
 import com.utile.files.UtileClass;
 
@@ -12,8 +11,6 @@ import cucumber.api.java.en.Given;
 import cucumber.api.java.en.Then;
 
 public class HomePageClass extends UtileClass {
-
-	
 
 	HomePagePOM homePage = new HomePagePOM(driver);
 
