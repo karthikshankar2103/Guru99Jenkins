@@ -6,41 +6,27 @@ import java.util.Properties;
 import java.util.concurrent.TimeUnit;
 
 import org.openqa.selenium.Alert;
-import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.firefox.FirefoxDriver;
 import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.WebDriverWait;
-import org.testng.Assert;
-import org.testng.annotations.Parameters;
 import org.testng.asserts.SoftAssert;
 
-import com.page.repo.AddCustomerPOM;
-import com.page.repo.AddTariffPOM;
-import com.page.repo.AddTariffToCustomerPOM;
-import com.page.repo.HomePagePOM;
-import com.page.repo.PaayBillPOM;
 
 import io.github.bonigarcia.wdm.WebDriverManager;
 
 public class UtileClass {
 
-	
-	
 	public static WebDriver driver;
 
-	
-	
 	SoftAssert sa = new SoftAssert();
-	
-	
+
 	Properties pro;
 	File file;
 	FileInputStream fi;
 
-	
 	public WebDriver launch(String browser) {
 		if (browser.equalsIgnoreCase("chrome")) {
 			try {
@@ -68,15 +54,12 @@ public class UtileClass {
 		return driver;
 
 	}
-	
+
 	public void launchURL(String url) {
-		
+
 		driver.get(url);
-		
+
 	}
-	
-	
-	
 
 	public boolean isEmpty(WebElement ele) {
 		String attribute = ele.getAttribute("value");
@@ -94,7 +77,6 @@ public class UtileClass {
 
 	}
 
-
 	public void waitForTheFrame(WebElement element) {
 		WebDriverWait wait = new WebDriverWait(driver, 20);
 		wait.until(ExpectedConditions.frameToBeAvailableAndSwitchToIt(element));
@@ -107,7 +89,7 @@ public class UtileClass {
 	}
 
 	public WebElement waitForTheElement(WebElement element) {
-		
+
 		WebDriverWait wait = new WebDriverWait(driver, 20);
 		WebElement until = wait.until(ExpectedConditions.elementToBeClickable(element));
 		return until;
@@ -120,14 +102,12 @@ public class UtileClass {
 		try {
 			fi = new FileInputStream(file);
 		} catch (Exception e) {
-			// TODO Auto-generated catch block
 			e.printStackTrace();
 		}
 
 		try {
 			pro.load(fi);
 		} catch (Exception e) {
-			// TODO Auto-generated catch block
 			e.printStackTrace();
 		}
 
@@ -150,7 +130,7 @@ public class UtileClass {
 		WebDriverWait wait = new WebDriverWait(driver, 20);
 
 		wait.until(ExpectedConditions.visibilityOf(val));
-		boolean displayed =val.isDisplayed();
+		boolean displayed = val.isDisplayed();
 		return displayed;
 
 	}

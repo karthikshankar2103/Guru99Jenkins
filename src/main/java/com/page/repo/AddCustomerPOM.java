@@ -87,7 +87,6 @@ System.out.println("User Waiting for the flash video add");
 		utileClass.waitForTextBoxEnable(email, mailId);
 		utileClass.waitForTextBoxEnable(address, add);
 		utileClass.waitForTextBoxEnable(mobileNumber, mbl);
-//		utileClass.waitForTheElement(sumit).click();
 
 	}
 
