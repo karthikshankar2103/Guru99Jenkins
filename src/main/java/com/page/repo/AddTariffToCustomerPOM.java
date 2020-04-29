@@ -2,6 +2,7 @@ package com.page.repo;
 
 import java.util.LinkedHashMap;
 
+import org.openqa.selenium.JavascriptExecutor;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
@@ -18,7 +19,7 @@ public class AddTariffToCustomerPOM {
 	@FindBy(xpath = "//input[@name='submit']")
 	public WebElement submit;
 
-	@FindBy(xpath = "//td//label")
+	@FindBy(xpath = "//label[contains(text(),'')]")
 	public WebElement clickthePlan;
 
 	@FindBy(xpath = "//input[@name='submit']")
@@ -63,8 +64,11 @@ public class AddTariffToCustomerPOM {
 		closeButton();
 		System.out.println("User close the flash video add");
 
-		utileClass.waitForTheElement(clickthePlan).click();
+		// ((JavascriptExecutor)driver).executeScript("return
+		// window.getComputedStyle(arguments[0],':before').getPropertyValue('content');",
+		// clickthePlan).toString();
 
+		((JavascriptExecutor) driver).executeScript("arguments[0].click();", clickthePlan);
 		System.out.println("User click the plan");
 
 	}

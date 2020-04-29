@@ -14,130 +14,178 @@ import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.WebDriverWait;
 import org.testng.asserts.SoftAssert;
 
-
 import io.github.bonigarcia.wdm.WebDriverManager;
 
 public class UtileClass {
 
 	public static WebDriver driver;
-
+	WebElement element;
 	SoftAssert sa = new SoftAssert();
-
+	String str;
 	Properties pro;
 	File file;
 	FileInputStream fi;
+	boolean empty;
+	WebDriverWait wait = new WebDriverWait(driver, 20);
 
 	public WebDriver launch(String browser) {
-		if (browser.equalsIgnoreCase("chrome")) {
-			try {
-				System.setProperty("webdriver.chrome.driver", "./Drivers/chromedriver.exe");
-			} catch (Exception e) {
-				WebDriverManager.chromedriver().setup();
-			}
-			driver = new ChromeDriver();
-			driver.manage().window().maximize();
-			driver.manage().timeouts().pageLoadTimeout(60, TimeUnit.SECONDS);
-			driver.manage().timeouts().implicitlyWait(60, TimeUnit.SECONDS);
-		} else {
-			try {
-				System.setProperty("webdriver.chrome.driver", "./Drivers/geckodriver.exe");
-			} catch (Exception e) {
-				WebDriverManager.firefoxdriver().setup();
-			}
-			driver = new FirefoxDriver();
-			driver.manage().window().maximize();
-			driver.manage().timeouts().pageLoadTimeout(60, TimeUnit.SECONDS);
-			driver.manage().timeouts().implicitlyWait(60, TimeUnit.SECONDS);
+		try {
+			if (browser.equalsIgnoreCase("chrome")) {
+				try {
+					System.setProperty("webdriver.chrome.driver", "./Drivers/chromedriver.exe");
+				} catch (Exception e) {
+					WebDriverManager.chromedriver().setup();
+				}
+				driver = new ChromeDriver();
+				driver.manage().window().maximize();
+				driver.manage().timeouts().pageLoadTimeout(60, TimeUnit.SECONDS);
+				driver.manage().timeouts().implicitlyWait(60, TimeUnit.SECONDS);
+			} else {
+				try {
+					System.setProperty("webdriver.chrome.driver", "./Drivers/geckodriver.exe");
+				} catch (Exception e) {
+					WebDriverManager.firefoxdriver().setup();
+				}
+				driver = new FirefoxDriver();
+				driver.manage().timeouts().pageLoadTimeout(60, TimeUnit.SECONDS);
+				driver.manage().timeouts().implicitlyWait(60, TimeUnit.SECONDS);
 
+			}
+		} catch (Exception e) {
+
+			e.printStackTrace();
 		}
-
 		return driver;
 
 	}
 
 	public void launchURL(String url) {
-
-		driver.get(url);
-
+		try {
+			driver.get(url);
+			System.out.println("URL launched");
+		} catch (Exception e) {
+			
+			e.printStackTrace();
+		}
+		
 	}
 
 	public boolean isEmpty(WebElement ele) {
-		String attribute = ele.getAttribute("value");
 
-		boolean empty = attribute.isEmpty();
+		try {
+			String attribute = ele.getAttribute("str");
+
+			empty = attribute.isEmpty();
+
+		} catch (Exception e) {
+
+			e.printStackTrace();
+		}
 
 		return empty;
 
 	}
 
 	public Alert alertIsPresent() {
-		WebDriverWait wait = new WebDriverWait(driver, 20);
+
 
 		return wait.until(ExpectedConditions.alertIsPresent());
 
 	}
 
 	public void waitForTheFrame(WebElement element) {
-		WebDriverWait wait = new WebDriverWait(driver, 20);
-		wait.until(ExpectedConditions.frameToBeAvailableAndSwitchToIt(element));
+		try {
+			wait.until(ExpectedConditions.frameToBeAvailableAndSwitchToIt(element));
+		} catch (Exception e) {
+
+			e.printStackTrace();
+		}
 	}
 
 	public WebElement waitForTheElementPresent(WebElement element) {
-		WebDriverWait wait = new WebDriverWait(driver, 20);
-		WebElement until = wait.until(ExpectedConditions.visibilityOf(element));
-		return until;
+
+		try {
+			WebDriverWait wait = new WebDriverWait(driver, 20);
+			element = wait.until(ExpectedConditions.visibilityOf(element));
+		} catch (Exception e) {
+			e.printStackTrace();
+		}
+		return element;
 	}
 
 	public WebElement waitForTheElement(WebElement element) {
-
-		WebDriverWait wait = new WebDriverWait(driver, 20);
-		WebElement until = wait.until(ExpectedConditions.elementToBeClickable(element));
-		return until;
+		try {
+			WebDriverWait wait = new WebDriverWait(driver, 20);
+			element = wait.until(ExpectedConditions.elementToBeClickable(element));
+		} catch (Exception e) {
+			e.printStackTrace();
+		}
+		return element;
 	}
 
 	public String readPro(String key) {
 		pro = new Properties();
-
-		file = new File("C:\\Users\\Karthik Shankar\\eclipse-workspace\\Guru99Framework\\propertyFiles\\Repo.property");
 		try {
-			fi = new FileInputStream(file);
+
+			file = new File(
+					"C:\\Users\\Karthik Shankar\\eclipse-workspace\\Guru99Framework\\propertyFiles\\Repo.property");
+			try {
+				fi = new FileInputStream(file);
+			} catch (Exception e) {
+				e.printStackTrace();
+			}
+
+			try {
+				pro.load(fi);
+				str = pro.getProperty(key);
+			} catch (Exception e) {
+				e.printStackTrace();
+			}
 		} catch (Exception e) {
+
 			e.printStackTrace();
 		}
-
-		try {
-			pro.load(fi);
-		} catch (Exception e) {
-			e.printStackTrace();
-		}
-
-		return pro.getProperty(key);
+		return str;
 
 	}
 
-	public void waitForTextBoxEnable(WebElement ele, String value) {
-		WebDriverWait wait = new WebDriverWait(driver, 20);
+	public void waitForTextBoxEnable(WebElement ele, String str) {
 
-		wait.until(ExpectedConditions.visibilityOf(ele)).sendKeys(value);
+		try {
+			wait.until(ExpectedConditions.visibilityOf(ele)).sendKeys(str);
+		} catch (Exception e) {
+			e.printStackTrace();
 
+		}
 	}
 
 	public void sendKeys(WebElement val, String keys) {
-		val.sendKeys(keys);
+
+		try {
+			val.sendKeys(keys);
+		} catch (Exception e) {
+			e.printStackTrace();
+
+		}
 	}
 
 	public boolean isDisplayed(WebElement val) {
-		WebDriverWait wait = new WebDriverWait(driver, 20);
-
-		wait.until(ExpectedConditions.visibilityOf(val));
-		boolean displayed = val.isDisplayed();
-		return displayed;
+		try {
+			wait.until(ExpectedConditions.visibilityOf(val));
+			empty = val.isDisplayed();
+		} catch (Exception e) {
+			e.printStackTrace();
+		}
+		return empty;
 
 	}
 
 	public void close() {
-		driver.close();
-
+		try {
+			driver.close();
+		} catch (Exception e) {
+			e.printStackTrace();
+		}
 	}
 
 	public void verifyTitle(String actual) {

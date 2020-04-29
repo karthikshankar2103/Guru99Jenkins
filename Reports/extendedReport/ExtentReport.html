@@ -32,7 +32,6 @@
 		<ul id='slide-out' class='side-nav fixed hide-on-med-and-down'>
 			<li class='waves-effect active'><a href='#!' view='test-view' onclick="configureView(0);chartsView('test');"><i class='material-icons'>dashboard</i></a></li>
 						<li class='waves-effect'><a href='#!' view='category-view' onclick="configureView(1)"><i class='material-icons'>label_outline</i></a></li>
-			<li class='waves-effect'><a href='#!' view='exception-view' onclick="configureView(2)"><i class='material-icons'>bug_report</i></a></li>
 			<li class='waves-effect'><a href='#!' onclick="configureView(-1);chartsView('dashboard');" view='dashboard-view'><i class='material-icons'>track_changes</i></i></a></li>
 		</ul>
 
@@ -46,7 +45,7 @@
 		<ul id='nav-mobile' class='right hide-on-med-and-down nav-right'>
 			<li>
                 <a href='#!'>
-                    <span class='label suite-start-time blue darken-3'>Apr 27, 2020 03:55:53 PM</span>
+                    <span class='label suite-start-time blue darken-3'>Apr 29, 2020 10:41:04 AM</span>
 				</a>
 			</li>
 			<li>
@@ -72,8 +71,6 @@
 				</a>
 				<ul id='tests-toggle' class='dropdown-content'>
 											<li status='pass'><a href='#!'>Pass <i class='material-icons green-text'>check_circle</i></a></li>
-						<li status='fail'><a href='#!'>Fail <i class='material-icons red-text'>cancel</i></a></li>
-						<li status='skip'><a href='#!'>Skip <i class='material-icons cyan-text'>redo</i></a></li>
 					<li class='divider'></li>
 					<li status='clear' clear='true'><a href='#!'>Clear Filters <i class='material-icons'>clear</i></a></li>
 				</ul>
@@ -134,10 +131,10 @@
 					<canvas id='parent-analysis' width='100' height='80'></canvas>
 				</div>
 				<div class='block text-small'>
-					<span class='tooltipped' data-position='top' data-tooltip='0%'><span class='strong'>0</span> feature(s) passed</span>
+					<span class='tooltipped' data-position='top' data-tooltip='100%'><span class='strong'>1</span> feature(s) passed</span>
 				</div>
 				<div class='block text-small'>
-					<span class='strong tooltipped' data-position='top' data-tooltip='100%'>1</span> feature(s) failed, <span class='strong tooltipped' data-position='top' data-tooltip='0%'>0</span> others
+					<span class='strong tooltipped' data-position='top' data-tooltip='0%'>0</span> feature(s) failed, <span class='strong tooltipped' data-position='top' data-tooltip='0%'>0</span> others
 				</div>
 			</div>
 		</div>
@@ -149,10 +146,10 @@
 					<canvas id='child-analysis' width='100' height='80'></canvas>
 				</div>
 				<div class='block text-small'>
-					<span class='tooltipped' data-position='top' data-tooltip='0%'><span class='strong'>0</span> scenario(s) passed</span>
+					<span class='tooltipped' data-position='top' data-tooltip='100%'><span class='strong'>1</span> scenario(s) passed</span>
 				</div>
 				<div class='block text-small'>
-					<span class='strong tooltipped' data-position='top' data-tooltip='100%'>1</span> scenario(s) failed, <span class='strong tooltipped' data-position='top' data-tooltip='0%'>0</span> others
+					<span class='strong tooltipped' data-position='top' data-tooltip='0%'>0</span> scenario(s) failed, <span class='strong tooltipped' data-position='top' data-tooltip='0%'>0</span> others
 				</div>
 			</div>
 		</div>
@@ -164,10 +161,10 @@
 					<canvas id='grandchild-analysis' width='100' height='80'></canvas>
 				</div>
 				<div class='block text-small'>
-					<span class='tooltipped' data-position='top' data-tooltip='71.429%'><span class='strong'>10</span> step(s) passed</span>
+					<span class='tooltipped' data-position='top' data-tooltip='100%'><span class='strong'>14</span> step(s) passed</span>
 				</div>
 				<div class='block text-small'>
-					<span class='strong tooltipped' data-position='top' data-tooltip='7.143%'>1</span> step(s) failed, <span class='strong tooltipped' data-position='top' data-tooltip='21.429%'>3</span> others
+					<span class='strong tooltipped' data-position='top' data-tooltip='0%'>0</span> step(s) failed, <span class='strong tooltipped' data-position='top' data-tooltip='0%'>0</span> others
 				</div>
 			</div>
 		</div>
@@ -181,15 +178,15 @@
 			<ul id='test-collection' class='test-collection'>
 				
 				
-				<li class='test displayed active has-leaf fail' status='fail' bdd='true' test-id='1'>
+				<li class='test displayed active has-leaf pass' status='pass' bdd='true' test-id='1'>
 					<div class='test-heading'>
 						<span class='test-name'>Add customer and tariff</span>
-						<span class='test-time'>Apr 27, 2020 03:55:54 PM</span>
-						<span class='test-status right fail'>fail</span>
+						<span class='test-time'>Apr 29, 2020 10:41:04 AM</span>
+						<span class='test-status right pass'>pass</span>
 					</div>
 					<div class='test-content hide'>
-<div class='scenario node' test-id='2' status='fail'>
-	<span class='duration right label'>0h 1m 36s+682ms</span>
+<div class='scenario node' test-id='2' status='pass'>
+	<span class='duration right label'>0h 1m 25s+802ms</span>
 	<div class='desc'>
 		<b>Scenario</b>
 		<span class="desc-text">User create a customer id</span>
@@ -277,48 +274,36 @@
 				<div class='pre'>passed</div>
 			
 		</li>
-		<li test-id='13' class='node then fail' status='fail'>
+		<li test-id='13' class='node then pass' status='pass'>
 			
 			<b>Then</b>
 			
 			<span class="bdd-step-name">Then the user choose the tariff plan</span>
-				<div class='pre'><textarea>org.openqa.selenium.TimeoutException: Expected condition failed: waiting for element to be clickable: [[ChromeDriver: chrome on WINDOWS (0da81aeef4a00180af8d977e45328fa6)] -> xpath: //td//label] (tried for 20 second(s) with 500 milliseconds interval)
-Build info: version: '3.141.59', revision: 'e82be7d358', time: '2018-11-14T08:17:03'
-System info: host: 'DESKTOP-FBD16EE', ip: '192.168.43.132', os.name: 'Windows 10', os.arch: 'amd64', os.version: '10.0', java.version: '1.8.0_231'
-Driver info: org.openqa.selenium.chrome.ChromeDriver
-Capabilities {acceptInsecureCerts: false, browserName: chrome, browserVersion: 81.0.4044.122, chrome: {chromedriverVersion: 80.0.3987.106 (f68069574609..., userDataDir: C:\Users\KARTHI~1\AppData\L...}, goog:chromeOptions: {debuggerAddress: localhost:57327}, javascriptEnabled: true, networkConnectionEnabled: false, pageLoadStrategy: normal, platform: WINDOWS, platformName: WINDOWS, proxy: Proxy(), setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify}
-Session ID: 0da81aeef4a00180af8d977e45328fa6
-	at org.openqa.selenium.support.ui.WebDriverWait.timeoutException(WebDriverWait.java:95)
-	at org.openqa.selenium.support.ui.FluentWait.until(FluentWait.java:272)
-	at com.utile.files.UtileClass.waitForTheElement(UtileClass.java:94)
-	at com.page.repo.AddTariffToCustomerPOM.chooseThePlan(AddTariffToCustomerPOM.java:66)
-	at com.step.definision.AddCustomerAndTariff.the_user_choose_the_tariff_plan(AddCustomerAndTariff.java:97)
-	at ?.Then the user choose the tariff plan(C:/Users/Karthik Shankar/eclipse-workspace/Guru99Framework/src/main/java/com/feature/files/tariffPlan.feature:17)
-</textarea></div>
+				<div class='pre'>passed</div>
 			
 		</li>
-		<li test-id='14' class='node and skip' status='skip'>
+		<li test-id='14' class='node and pass' status='pass'>
 			
 			<b>And</b>
 			
 			<span class="bdd-step-name">And the user click ok button</span>
-				<div class='pre'>skipped</div>
+				<div class='pre'>passed</div>
 			
 		</li>
-		<li test-id='15' class='node then skip' status='skip'>
+		<li test-id='15' class='node then pass' status='pass'>
 			
 			<b>Then</b>
 			
 			<span class="bdd-step-name">Then User on the bill payment page</span>
-				<div class='pre'>skipped</div>
+				<div class='pre'>passed</div>
 			
 		</li>
-		<li test-id='16' class='node then skip' status='skip'>
+		<li test-id='16' class='node then pass' status='pass'>
 			
 			<b>Then</b>
 			
 			<span class="bdd-step-name">Then the user check his bill</span>
-				<div class='pre'>skipped</div>
+				<div class='pre'>passed</div>
 			
 		</li>
 	</ul>
@@ -379,13 +364,13 @@ Session ID: 0da81aeef4a00180af8d977e45328fa6
 					<div class='category-heading'>
 						<span class='category-name'>@tariffPlan</span>
 						<span class='category-status right'>
-							<span class='label fail'>1</span>
+							<span class='label pass'>1</span>
 						</span>
 					</div>
 					<div class='category-content hide'>
 						<div class='category-status-counts'>
+							<span class='label green accent-4 white-text'>Passed: 1</span>
 							
-							<span class='label red lighten-1 white-text'>Failed: 1</span>
 							
 						</div>
 					
@@ -400,9 +385,9 @@ Session ID: 0da81aeef4a00180af8d977e45328fa6
 								</thead>
 								<tbody>
 									<tr>
-										<td>Apr 27, 2020 03:55:54 PM</td>
+										<td>Apr 29, 2020 10:41:04 AM</td>
 										<td class='linked' test-id='1'>Add customer and tariff</td>
-										<td><span class='test-status fail'>fail</span></td>
+										<td><span class='test-status pass'>pass</span></td>
 									</tr>
 								</tbody>
 							</table>
@@ -421,79 +406,6 @@ Session ID: 0da81aeef4a00180af8d977e45328fa6
 	</div>
 </div>
 <!-- category view -->
-<div id='exception-view' class='view hide'>
-
-    <section id='controls'>
-        <div class='controls grey lighten-4'>
-            <!-- search -->
-            <div class='chip transparent' alt='Search Tests' title='Search Tests'>
-                <a href="#" class='search-div'>
-                    <i class='material-icons'>search</i> Search
-                </a>
-
-                <div class='input-field left hide'>
-                    <input id='search-tests' type='text' class='validate browser-default' placeholder='Search Tests...'>
-                </div>
-
-            </div>
-            <!-- search -->
-        </div>
-    </section>
-
-    <div class='subview-left left'>
-
-        <div class='view-summary'>
-            <h5>Exceptions</h3>
-                <ul id='exception-collection' class='exception-collection'>
-
-                        <li class='exception displayed active'>
-                            <div class='exception-heading'>
-                                <span class='exception-name'>org.openqa.selenium.TimeoutException</span>
-                                <span class='exception-count right'><span class='label red lighten-1 white-text'>1</span></span>
-                            </div>
-                            <div class='exception-content hide'>
-                                <div class='exception-tests'>
-                                    <table class='bordered table-results'>
-                                        <thead>
-                                        <tr>
-                                            <th>Timestamp</th>
-                                            <th>TestName</th>
-                                            <th>Status</th>
-                                        </tr>
-                                        </thead>
-                                        <tbody>
-                                                    <tr>
-                                                        <td>Apr 27, 2020 03:57:07 PM</td>
-                                                        <td class='linked' test-id='13'>Add customer and tariff.User create a customer id.Then the user choose the tariff plan</td>
-                                                        <td><pre><textarea>org.openqa.selenium.TimeoutException: Expected condition failed: waiting for element to be clickable: [[ChromeDriver: chrome on WINDOWS (0da81aeef4a00180af8d977e45328fa6)] -> xpath: //td//label] (tried for 20 second(s) with 500 milliseconds interval)
-Build info: version: '3.141.59', revision: 'e82be7d358', time: '2018-11-14T08:17:03'
-System info: host: 'DESKTOP-FBD16EE', ip: '192.168.43.132', os.name: 'Windows 10', os.arch: 'amd64', os.version: '10.0', java.version: '1.8.0_231'
-Driver info: org.openqa.selenium.chrome.ChromeDriver
-Capabilities {acceptInsecureCerts: false, browserName: chrome, browserVersion: 81.0.4044.122, chrome: {chromedriverVersion: 80.0.3987.106 (f68069574609..., userDataDir: C:\Users\KARTHI~1\AppData\L...}, goog:chromeOptions: {debuggerAddress: localhost:57327}, javascriptEnabled: true, networkConnectionEnabled: false, pageLoadStrategy: normal, platform: WINDOWS, platformName: WINDOWS, proxy: Proxy(), setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify}
-Session ID: 0da81aeef4a00180af8d977e45328fa6
-	at org.openqa.selenium.support.ui.WebDriverWait.timeoutException(WebDriverWait.java:95)
-	at org.openqa.selenium.support.ui.FluentWait.until(FluentWait.java:272)
-	at com.utile.files.UtileClass.waitForTheElement(UtileClass.java:94)
-	at com.page.repo.AddTariffToCustomerPOM.chooseThePlan(AddTariffToCustomerPOM.java:66)
-	at com.step.definision.AddCustomerAndTariff.the_user_choose_the_tariff_plan(AddCustomerAndTariff.java:97)
-	at ?.Then the user choose the tariff plan(C:/Users/Karthik Shankar/eclipse-workspace/Guru99Framework/src/main/java/com/feature/files/tariffPlan.feature:17)
-</textarea></pre></td>
-                                                    </tr>
-                                        </tbody>
-                                    </table>
-                                </div>
-                            </div>
-                        </li>
-                </ul>
-        </div>
-    </div>
-
-    <div class='subview-right left'>
-        <div class='view-summary'>
-            <h5 class='exception-name'></h5>
-        </div>
-    </div>
-</div>
 <!-- exception view -->
 <div id='dashboard-view' class='view hide'>
 	<div class='card-panel transparent np-v'>
@@ -521,19 +433,19 @@ Session ID: 0da81aeef4a00180af8d977e45328fa6
 			<div class='col s2'>
 				<div class='card-panel r'>
 					Start
-					<div class='panel-lead'>Apr 27, 2020 03:55:53 PM</div>
+					<div class='panel-lead'>Apr 29, 2020 10:41:04 AM</div>
 				</div>
 			</div>
 			<div class='col s2'>
 				<div class='card-panel r'>
 			 		End
-			 		<div class='panel-lead'>Apr 27, 2020 03:57:33 PM</div>
+			 		<div class='panel-lead'>Apr 29, 2020 10:42:32 AM</div>
 				</div>
 			</div>
 			<div class='col s2'>
 				<div class='card-panel r'>
 					Time Taken
-					<div class='panel-lead'>99,749ms</div>
+					<div class='panel-lead'>88,587ms</div>
 				</div>
 			</div>
 			<div class='col s4'>
@@ -549,8 +461,8 @@ Session ID: 0da81aeef4a00180af8d977e45328fa6
 						</tr>
 						<tr>
 							<td>@tariffPlan</td>
-							<td>0</td>
 							<td>1</td>
+							<td>0</td>
 							<td>0</td>
 						</tr>
 					</table>
@@ -566,31 +478,31 @@ Session ID: 0da81aeef4a00180af8d977e45328fa6
 
 		<script>
 			var statusGroup = {
-				passParent: 0,
-				failParent: 1,
+				passParent: 1,
+				failParent: 0,
 				fatalParent: 0,
 				errorParent: 0,
 				warningParent: 0,
 				skipParent: 0,
-				exceptionsParent: 1,
+				exceptionsParent: 0,
 				
-				passChild: 0,
-				failChild: 1,
+				passChild: 1,
+				failChild: 0,
 				fatalChild: 0,
 				errorChild: 0,
 				warningChild: 0,
 				skipChild: 0,
 				infoChild: 0,
-				exceptionsChild: 1,
+				exceptionsChild: 0,
 				
-				passGrandChild: 10,
-				failGrandChild: 1,
+				passGrandChild: 14,
+				failGrandChild: 0,
 				fatalGrandChild: 0,
 				errorGrandChild: 0,
 				warningGrandChild: 0,
-				skipGrandChild: 3,
+				skipGrandChild: 0,
 				infoGrandChild: 0,
-				exceptionsGrandChild: 4,
+				exceptionsGrandChild: 0,
 			};
 		</script>
 		

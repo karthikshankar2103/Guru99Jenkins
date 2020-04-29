@@ -110,8 +110,10 @@ public class AddCustomerAndTariff extends UtileClass {
 
 	@Then("^the user check his bill$")
 	public void the_user_check_his_bill() throws Throwable {
+		payBill = PageFactory.initElements(driver, PaayBillPOM.class);
 		payBill.enterTheCustomerId(customerId);
 		Assert.assertTrue(payBill.checkTheName(addCustomer.customerName));
+		System.out.println("Bill verified");
 		System.out.println("All Scenario got excuted");
 	}
 }
