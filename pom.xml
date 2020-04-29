@@ -95,9 +95,6 @@
 						<suiteXmlFiles>
 							<suiteXmlFile>testng.xml</suiteXmlFile>
 						</suiteXmlFiles>
-						<systemProperties>
-						<browser>${Browser}</browser>
-						</systemProperties>
 					</configuration>
 				</plugin>
 			</plugins>

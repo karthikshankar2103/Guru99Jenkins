@@ -23,10 +23,9 @@ public class Hooks {
 		utileClass.launch("chrome");
 	}
 
-	@Parameters({ "Browser" })
 	@Before(value = "@tariffPlan")
-	public void launcher(String browser) {
-		utileClass.launch(browser);
+	public void launcher() {
+		utileClass.launch("chrome");
 		utileClass.launchURL(utileClass.readPro("URL"));
 	}
 

@@ -1,8 +1,4 @@
 -------------------------------------------------------------------------------
 Test set: TestSuite
 -------------------------------------------------------------------------------
-Tests run: 1, Failures: 1, Errors: 0, Skipped: 0, Time elapsed: 6.002 s <<< FAILURE! - in TestSuite
-com.test.runner.RunnerTest.feature  Time elapsed: 1.319 s  <<< FAILURE!
-cucumber.runtime.CucumberException: cucumber.runtime.CucumberException: When a hook declares an argument it must be of type cucumber.api.Scenario. public void com.step.definision.Hooks.launcher(java.lang.String)
-Caused by: cucumber.runtime.CucumberException: When a hook declares an argument it must be of type cucumber.api.Scenario. public void com.step.definision.Hooks.launcher(java.lang.String)
-
+Tests run: 1, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 115.128 s - in TestSuite
