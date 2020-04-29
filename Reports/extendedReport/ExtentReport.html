@@ -32,6 +32,7 @@
 		<ul id='slide-out' class='side-nav fixed hide-on-med-and-down'>
 			<li class='waves-effect active'><a href='#!' view='test-view' onclick="configureView(0);chartsView('test');"><i class='material-icons'>dashboard</i></a></li>
 						<li class='waves-effect'><a href='#!' view='category-view' onclick="configureView(1)"><i class='material-icons'>label_outline</i></a></li>
+			<li class='waves-effect'><a href='#!' view='exception-view' onclick="configureView(2)"><i class='material-icons'>bug_report</i></a></li>
 			<li class='waves-effect'><a href='#!' onclick="configureView(-1);chartsView('dashboard');" view='dashboard-view'><i class='material-icons'>track_changes</i></i></a></li>
 		</ul>
 
@@ -45,7 +46,7 @@
 		<ul id='nav-mobile' class='right hide-on-med-and-down nav-right'>
 			<li>
                 <a href='#!'>
-                    <span class='label suite-start-time blue darken-3'>Apr 29, 2020 10:41:04 AM</span>
+                    <span class='label suite-start-time blue darken-3'>Apr 29, 2020 11:38:10 AM</span>
 				</a>
 			</li>
 			<li>
@@ -71,6 +72,8 @@
 				</a>
 				<ul id='tests-toggle' class='dropdown-content'>
 											<li status='pass'><a href='#!'>Pass <i class='material-icons green-text'>check_circle</i></a></li>
+						<li status='fail'><a href='#!'>Fail <i class='material-icons red-text'>cancel</i></a></li>
+						<li status='skip'><a href='#!'>Skip <i class='material-icons cyan-text'>redo</i></a></li>
 					<li class='divider'></li>
 					<li status='clear' clear='true'><a href='#!'>Clear Filters <i class='material-icons'>clear</i></a></li>
 				</ul>
@@ -131,10 +134,10 @@
 					<canvas id='parent-analysis' width='100' height='80'></canvas>
 				</div>
 				<div class='block text-small'>
-					<span class='tooltipped' data-position='top' data-tooltip='100%'><span class='strong'>1</span> feature(s) passed</span>
+					<span class='tooltipped' data-position='top' data-tooltip='0%'><span class='strong'>0</span> feature(s) passed</span>
 				</div>
 				<div class='block text-small'>
-					<span class='strong tooltipped' data-position='top' data-tooltip='0%'>0</span> feature(s) failed, <span class='strong tooltipped' data-position='top' data-tooltip='0%'>0</span> others
+					<span class='strong tooltipped' data-position='top' data-tooltip='100%'>1</span> feature(s) failed, <span class='strong tooltipped' data-position='top' data-tooltip='0%'>0</span> others
 				</div>
 			</div>
 		</div>
@@ -146,10 +149,10 @@
 					<canvas id='child-analysis' width='100' height='80'></canvas>
 				</div>
 				<div class='block text-small'>
-					<span class='tooltipped' data-position='top' data-tooltip='100%'><span class='strong'>1</span> scenario(s) passed</span>
+					<span class='tooltipped' data-position='top' data-tooltip='0%'><span class='strong'>0</span> scenario(s) passed</span>
 				</div>
 				<div class='block text-small'>
-					<span class='strong tooltipped' data-position='top' data-tooltip='0%'>0</span> scenario(s) failed, <span class='strong tooltipped' data-position='top' data-tooltip='0%'>0</span> others
+					<span class='strong tooltipped' data-position='top' data-tooltip='100%'>1</span> scenario(s) failed, <span class='strong tooltipped' data-position='top' data-tooltip='0%'>0</span> others
 				</div>
 			</div>
 		</div>
@@ -161,10 +164,10 @@
 					<canvas id='grandchild-analysis' width='100' height='80'></canvas>
 				</div>
 				<div class='block text-small'>
-					<span class='tooltipped' data-position='top' data-tooltip='100%'><span class='strong'>14</span> step(s) passed</span>
+					<span class='tooltipped' data-position='top' data-tooltip='7.143%'><span class='strong'>1</span> step(s) passed</span>
 				</div>
 				<div class='block text-small'>
-					<span class='strong tooltipped' data-position='top' data-tooltip='0%'>0</span> step(s) failed, <span class='strong tooltipped' data-position='top' data-tooltip='0%'>0</span> others
+					<span class='strong tooltipped' data-position='top' data-tooltip='7.143%'>1</span> step(s) failed, <span class='strong tooltipped' data-position='top' data-tooltip='85.714%'>12</span> others
 				</div>
 			</div>
 		</div>
@@ -178,15 +181,15 @@
 			<ul id='test-collection' class='test-collection'>
 				
 				
-				<li class='test displayed active has-leaf pass' status='pass' bdd='true' test-id='1'>
+				<li class='test displayed active has-leaf fail' status='fail' bdd='true' test-id='1'>
 					<div class='test-heading'>
 						<span class='test-name'>Add customer and tariff</span>
-						<span class='test-time'>Apr 29, 2020 10:41:04 AM</span>
-						<span class='test-status right pass'>pass</span>
+						<span class='test-time'>Apr 29, 2020 11:38:10 AM</span>
+						<span class='test-status right fail'>fail</span>
 					</div>
 					<div class='test-content hide'>
-<div class='scenario node' test-id='2' status='pass'>
-	<span class='duration right label'>0h 1m 25s+802ms</span>
+<div class='scenario node' test-id='2' status='fail'>
+	<span class='duration right label'>0h 1m 18s+26ms</span>
 	<div class='desc'>
 		<b>Scenario</b>
 		<span class="desc-text">User create a customer id</span>
@@ -200,110 +203,139 @@
 				<div class='pre'>passed</div>
 			
 		</li>
-		<li test-id='4' class='node when pass' status='pass'>
+		<li test-id='4' class='node when fail' status='fail'>
 			
 			<b>When</b>
 			
 			<span class="bdd-step-name">When the user enter the customer details</span>
 				<div class='pre'><table><tr><td>Karthik</td><td>Shankar</td><td>karthikshankar@gmail.com</td><td>xxxx</td><td>1234567890</td></tr></table></div>
-				<div class='pre'>passed</div>
+				<div class='pre'><pre>org.openqa.selenium.NoSuchWindowException: no such window: target window already closed
+from unknown error: web view not found
+  (Session info: chrome=81.0.4044.122)
+Build info: version: '3.141.59', revision: 'e82be7d358', time: '2018-11-14T08:17:03'
+System info: host: 'DESKTOP-FBD16EE', ip: '192.168.43.132', os.name: 'Windows 10', os.arch: 'amd64', os.version: '10.0', java.version: '1.8.0_231'
+Driver info: org.openqa.selenium.chrome.ChromeDriver
+Capabilities {acceptInsecureCerts: false, browserName: chrome, browserVersion: 81.0.4044.122, chrome: {chromedriverVersion: 80.0.3987.106 (f68069574609..., userDataDir: C:\Users\KARTHI~1\AppData\L...}, goog:chromeOptions: {debuggerAddress: localhost:63177}, javascriptEnabled: true, networkConnectionEnabled: false, pageLoadStrategy: normal, platform: WINDOWS, platformName: WINDOWS, proxy: Proxy(), setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify}
+Session ID: f511d0edff7c7a0fe680f86d7290fc2b
+*** Element info: {Using=xpath, value=//div[@id='closeBtn']}
+	at sun.reflect.GeneratedConstructorAccessor14.newInstance(Unknown Source)
+	at sun.reflect.DelegatingConstructorAccessorImpl.newInstance(DelegatingConstructorAccessorImpl.java:45)
+	at java.lang.reflect.Constructor.newInstance(Constructor.java:423)
+	at org.openqa.selenium.remote.http.W3CHttpResponseCodec.createException(W3CHttpResponseCodec.java:187)
+	at org.openqa.selenium.remote.http.W3CHttpResponseCodec.decode(W3CHttpResponseCodec.java:122)
+	at org.openqa.selenium.remote.http.W3CHttpResponseCodec.decode(W3CHttpResponseCodec.java:49)
+	at org.openqa.selenium.remote.HttpCommandExecutor.execute(HttpCommandExecutor.java:158)
+	at org.openqa.selenium.remote.service.DriverCommandExecutor.execute(DriverCommandExecutor.java:83)
+	at org.openqa.selenium.remote.RemoteWebDriver.execute(RemoteWebDriver.java:552)
+	at org.openqa.selenium.remote.RemoteWebDriver.findElement(RemoteWebDriver.java:323)
+	at org.openqa.selenium.remote.RemoteWebDriver.findElementByXPath(RemoteWebDriver.java:428)
+	at org.openqa.selenium.By$ByXPath.findElement(By.java:353)
+	at org.openqa.selenium.remote.RemoteWebDriver.findElement(RemoteWebDriver.java:315)
+	at org.openqa.selenium.support.pagefactory.DefaultElementLocator.findElement(DefaultElementLocator.java:69)
+	at org.openqa.selenium.support.pagefactory.internal.LocatingElementHandler.invoke(LocatingElementHandler.java:38)
+	at com.sun.proxy.$Proxy18.click(Unknown Source)
+	at com.page.repo.AddCustomerPOM.closeButton(AddCustomerPOM.java:74)
+	at com.page.repo.AddCustomerPOM.passTheDatas(AddCustomerPOM.java:80)
+	at com.step.definision.AddCustomerAndTariff.the_user_enter_the_customer_details(AddCustomerAndTariff.java:45)
+	at ?.When the user enter the customer details(C:/Users/Karthik Shankar/eclipse-workspace/Guru99Framework/src/main/java/com/feature/files/tariffPlan.feature:6)
+</pre></div>
 			
 		</li>
-		<li test-id='5' class='node then pass' status='pass'>
+		<li test-id='5' class='node then skip' status='skip'>
 			
 			<b>Then</b>
 			
 			<span class="bdd-step-name">Then click the submit button</span>
-				<div class='pre'>passed</div>
+				<div class='pre'>skipped</div>
 			
 		</li>
-		<li test-id='6' class='node and pass' status='pass'>
+		<li test-id='6' class='node and skip' status='skip'>
 			
 			<b>And</b>
 			
 			<span class="bdd-step-name">And get the customer Id</span>
-				<div class='pre'>passed</div>
+				<div class='pre'>skipped</div>
 			
 		</li>
-		<li test-id='7' class='node then pass' status='pass'>
+		<li test-id='7' class='node then skip' status='skip'>
 			
 			<b>Then</b>
 			
 			<span class="bdd-step-name">Then user on the tariff page</span>
-				<div class='pre'>passed</div>
+				<div class='pre'>skipped</div>
 			
 		</li>
-		<li test-id='8' class='node when pass' status='pass'>
+		<li test-id='8' class='node when skip' status='skip'>
 			
 			<b>When</b>
 			
 			<span class="bdd-step-name">When the user enter the tariff details</span>
 				<div class='pre'><table><tr><td>300</td><td>1000</td><td>250</td><td>100</td><td>1</td><td>3</td><td>1</td></tr></table></div>
-				<div class='pre'>passed</div>
+				<div class='pre'>skipped</div>
 			
 		</li>
-		<li test-id='9' class='node then pass' status='pass'>
+		<li test-id='9' class='node then skip' status='skip'>
 			
 			<b>Then</b>
 			
 			<span class="bdd-step-name">Then user click the submit button</span>
-				<div class='pre'>passed</div>
+				<div class='pre'>skipped</div>
 			
 		</li>
-		<li test-id='10' class='node then pass' status='pass'>
+		<li test-id='10' class='node then skip' status='skip'>
 			
 			<b>Then</b>
 			
 			<span class="bdd-step-name">Then user on the page</span>
-				<div class='pre'>passed</div>
+				<div class='pre'>skipped</div>
 			
 		</li>
-		<li test-id='11' class='node when pass' status='pass'>
+		<li test-id='11' class='node when skip' status='skip'>
 			
 			<b>When</b>
 			
 			<span class="bdd-step-name">When the user enter the customer id</span>
-				<div class='pre'>passed</div>
+				<div class='pre'>skipped</div>
 			
 		</li>
-		<li test-id='12' class='node and pass' status='pass'>
+		<li test-id='12' class='node and skip' status='skip'>
 			
 			<b>And</b>
 			
 			<span class="bdd-step-name">And the user click ok</span>
-				<div class='pre'>passed</div>
+				<div class='pre'>skipped</div>
 			
 		</li>
-		<li test-id='13' class='node then pass' status='pass'>
+		<li test-id='13' class='node then skip' status='skip'>
 			
 			<b>Then</b>
 			
 			<span class="bdd-step-name">Then the user choose the tariff plan</span>
-				<div class='pre'>passed</div>
+				<div class='pre'>skipped</div>
 			
 		</li>
-		<li test-id='14' class='node and pass' status='pass'>
+		<li test-id='14' class='node and skip' status='skip'>
 			
 			<b>And</b>
 			
 			<span class="bdd-step-name">And the user click ok button</span>
-				<div class='pre'>passed</div>
+				<div class='pre'>skipped</div>
 			
 		</li>
-		<li test-id='15' class='node then pass' status='pass'>
+		<li test-id='15' class='node then skip' status='skip'>
 			
 			<b>Then</b>
 			
 			<span class="bdd-step-name">Then User on the bill payment page</span>
-				<div class='pre'>passed</div>
+				<div class='pre'>skipped</div>
 			
 		</li>
-		<li test-id='16' class='node then pass' status='pass'>
+		<li test-id='16' class='node then skip' status='skip'>
 			
 			<b>Then</b>
 			
 			<span class="bdd-step-name">Then the user check his bill</span>
-				<div class='pre'>passed</div>
+				<div class='pre'>skipped</div>
 			
 		</li>
 	</ul>
@@ -364,13 +396,13 @@
 					<div class='category-heading'>
 						<span class='category-name'>@tariffPlan</span>
 						<span class='category-status right'>
-							<span class='label pass'>1</span>
+							<span class='label fail'>1</span>
 						</span>
 					</div>
 					<div class='category-content hide'>
 						<div class='category-status-counts'>
-							<span class='label green accent-4 white-text'>Passed: 1</span>
 							
+							<span class='label red lighten-1 white-text'>Failed: 1</span>
 							
 						</div>
 					
@@ -385,9 +417,9 @@
 								</thead>
 								<tbody>
 									<tr>
-										<td>Apr 29, 2020 10:41:04 AM</td>
+										<td>Apr 29, 2020 11:38:10 AM</td>
 										<td class='linked' test-id='1'>Add customer and tariff</td>
-										<td><span class='test-status pass'>pass</span></td>
+										<td><span class='test-status fail'>fail</span></td>
 									</tr>
 								</tbody>
 							</table>
@@ -406,6 +438,96 @@
 	</div>
 </div>
 <!-- category view -->
+<div id='exception-view' class='view hide'>
+
+    <section id='controls'>
+        <div class='controls grey lighten-4'>
+            <!-- search -->
+            <div class='chip transparent' alt='Search Tests' title='Search Tests'>
+                <a href="#" class='search-div'>
+                    <i class='material-icons'>search</i> Search
+                </a>
+
+                <div class='input-field left hide'>
+                    <input id='search-tests' type='text' class='validate browser-default' placeholder='Search Tests...'>
+                </div>
+
+            </div>
+            <!-- search -->
+        </div>
+    </section>
+
+    <div class='subview-left left'>
+
+        <div class='view-summary'>
+            <h5>Exceptions</h3>
+                <ul id='exception-collection' class='exception-collection'>
+
+                        <li class='exception displayed active'>
+                            <div class='exception-heading'>
+                                <span class='exception-name'>org.openqa.selenium.NoSuchWindowException</span>
+                                <span class='exception-count right'><span class='label red lighten-1 white-text'>1</span></span>
+                            </div>
+                            <div class='exception-content hide'>
+                                <div class='exception-tests'>
+                                    <table class='bordered table-results'>
+                                        <thead>
+                                        <tr>
+                                            <th>Timestamp</th>
+                                            <th>TestName</th>
+                                            <th>Status</th>
+                                        </tr>
+                                        </thead>
+                                        <tbody>
+                                                    <tr>
+                                                        <td>Apr 29, 2020 11:38:47 AM</td>
+                                                        <td class='linked' test-id='4'>Add customer and tariff.User create a customer id.When the user enter the customer details</td>
+                                                        <td><pre><pre>org.openqa.selenium.NoSuchWindowException: no such window: target window already closed
+from unknown error: web view not found
+  (Session info: chrome=81.0.4044.122)
+Build info: version: '3.141.59', revision: 'e82be7d358', time: '2018-11-14T08:17:03'
+System info: host: 'DESKTOP-FBD16EE', ip: '192.168.43.132', os.name: 'Windows 10', os.arch: 'amd64', os.version: '10.0', java.version: '1.8.0_231'
+Driver info: org.openqa.selenium.chrome.ChromeDriver
+Capabilities {acceptInsecureCerts: false, browserName: chrome, browserVersion: 81.0.4044.122, chrome: {chromedriverVersion: 80.0.3987.106 (f68069574609..., userDataDir: C:\Users\KARTHI~1\AppData\L...}, goog:chromeOptions: {debuggerAddress: localhost:63177}, javascriptEnabled: true, networkConnectionEnabled: false, pageLoadStrategy: normal, platform: WINDOWS, platformName: WINDOWS, proxy: Proxy(), setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify}
+Session ID: f511d0edff7c7a0fe680f86d7290fc2b
+*** Element info: {Using=xpath, value=//div[@id='closeBtn']}
+	at sun.reflect.GeneratedConstructorAccessor14.newInstance(Unknown Source)
+	at sun.reflect.DelegatingConstructorAccessorImpl.newInstance(DelegatingConstructorAccessorImpl.java:45)
+	at java.lang.reflect.Constructor.newInstance(Constructor.java:423)
+	at org.openqa.selenium.remote.http.W3CHttpResponseCodec.createException(W3CHttpResponseCodec.java:187)
+	at org.openqa.selenium.remote.http.W3CHttpResponseCodec.decode(W3CHttpResponseCodec.java:122)
+	at org.openqa.selenium.remote.http.W3CHttpResponseCodec.decode(W3CHttpResponseCodec.java:49)
+	at org.openqa.selenium.remote.HttpCommandExecutor.execute(HttpCommandExecutor.java:158)
+	at org.openqa.selenium.remote.service.DriverCommandExecutor.execute(DriverCommandExecutor.java:83)
+	at org.openqa.selenium.remote.RemoteWebDriver.execute(RemoteWebDriver.java:552)
+	at org.openqa.selenium.remote.RemoteWebDriver.findElement(RemoteWebDriver.java:323)
+	at org.openqa.selenium.remote.RemoteWebDriver.findElementByXPath(RemoteWebDriver.java:428)
+	at org.openqa.selenium.By$ByXPath.findElement(By.java:353)
+	at org.openqa.selenium.remote.RemoteWebDriver.findElement(RemoteWebDriver.java:315)
+	at org.openqa.selenium.support.pagefactory.DefaultElementLocator.findElement(DefaultElementLocator.java:69)
+	at org.openqa.selenium.support.pagefactory.internal.LocatingElementHandler.invoke(LocatingElementHandler.java:38)
+	at com.sun.proxy.$Proxy18.click(Unknown Source)
+	at com.page.repo.AddCustomerPOM.closeButton(AddCustomerPOM.java:74)
+	at com.page.repo.AddCustomerPOM.passTheDatas(AddCustomerPOM.java:80)
+	at com.step.definision.AddCustomerAndTariff.the_user_enter_the_customer_details(AddCustomerAndTariff.java:45)
+	at ?.When the user enter the customer details(C:/Users/Karthik Shankar/eclipse-workspace/Guru99Framework/src/main/java/com/feature/files/tariffPlan.feature:6)
+</pre></pre></td>
+                                                    </tr>
+                                        </tbody>
+                                    </table>
+                                </div>
+                            </div>
+                        </li>
+                </ul>
+        </div>
+    </div>
+
+    <div class='subview-right left'>
+        <div class='view-summary'>
+            <h5 class='exception-name'></h5>
+        </div>
+    </div>
+</div>
 <!-- exception view -->
 <div id='dashboard-view' class='view hide'>
 	<div class='card-panel transparent np-v'>
@@ -433,19 +555,19 @@
 			<div class='col s2'>
 				<div class='card-panel r'>
 					Start
-					<div class='panel-lead'>Apr 29, 2020 10:41:04 AM</div>
+					<div class='panel-lead'>Apr 29, 2020 11:38:10 AM</div>
 				</div>
 			</div>
 			<div class='col s2'>
 				<div class='card-panel r'>
 			 		End
-			 		<div class='panel-lead'>Apr 29, 2020 10:42:32 AM</div>
+			 		<div class='panel-lead'>Apr 29, 2020 11:39:28 AM</div>
 				</div>
 			</div>
 			<div class='col s2'>
 				<div class='card-panel r'>
 					Time Taken
-					<div class='panel-lead'>88,587ms</div>
+					<div class='panel-lead'>78,394ms</div>
 				</div>
 			</div>
 			<div class='col s4'>
@@ -461,8 +583,8 @@
 						</tr>
 						<tr>
 							<td>@tariffPlan</td>
-							<td>1</td>
 							<td>0</td>
+							<td>1</td>
 							<td>0</td>
 						</tr>
 					</table>
@@ -478,31 +600,31 @@
 
 		<script>
 			var statusGroup = {
-				passParent: 1,
-				failParent: 0,
+				passParent: 0,
+				failParent: 1,
 				fatalParent: 0,
 				errorParent: 0,
 				warningParent: 0,
 				skipParent: 0,
-				exceptionsParent: 0,
+				exceptionsParent: 1,
 				
-				passChild: 1,
-				failChild: 0,
+				passChild: 0,
+				failChild: 1,
 				fatalChild: 0,
 				errorChild: 0,
 				warningChild: 0,
 				skipChild: 0,
 				infoChild: 0,
-				exceptionsChild: 0,
+				exceptionsChild: 1,
 				
-				passGrandChild: 14,
-				failGrandChild: 0,
+				passGrandChild: 1,
+				failGrandChild: 1,
 				fatalGrandChild: 0,
 				errorGrandChild: 0,
 				warningGrandChild: 0,
-				skipGrandChild: 0,
+				skipGrandChild: 12,
 				infoGrandChild: 0,
-				exceptionsGrandChild: 0,
+				exceptionsGrandChild: 13,
 			};
 		</script>
 		

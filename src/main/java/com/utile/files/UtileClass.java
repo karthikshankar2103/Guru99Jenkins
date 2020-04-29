@@ -26,48 +26,38 @@ public class UtileClass {
 	File file;
 	FileInputStream fi;
 	boolean empty;
-	WebDriverWait wait = new WebDriverWait(driver, 20);
 
 	public WebDriver launch(String browser) {
-		try {
-			if (browser.equalsIgnoreCase("chrome")) {
-				try {
-					System.setProperty("webdriver.chrome.driver", "./Drivers/chromedriver.exe");
-				} catch (Exception e) {
-					WebDriverManager.chromedriver().setup();
-				}
-				driver = new ChromeDriver();
-				driver.manage().window().maximize();
-				driver.manage().timeouts().pageLoadTimeout(60, TimeUnit.SECONDS);
-				driver.manage().timeouts().implicitlyWait(60, TimeUnit.SECONDS);
-			} else {
-				try {
-					System.setProperty("webdriver.chrome.driver", "./Drivers/geckodriver.exe");
-				} catch (Exception e) {
-					WebDriverManager.firefoxdriver().setup();
-				}
-				driver = new FirefoxDriver();
-				driver.manage().timeouts().pageLoadTimeout(60, TimeUnit.SECONDS);
-				driver.manage().timeouts().implicitlyWait(60, TimeUnit.SECONDS);
 
+		if (browser.equalsIgnoreCase("chrome")) {
+			try {
+				System.setProperty("webdriver.chrome.driver", "./Drivers/chromedriver.exe");
+			} catch (Exception e) {
+				WebDriverManager.chromedriver().setup();
 			}
-		} catch (Exception e) {
+			driver = new ChromeDriver();
+			driver.manage().window().maximize();
+			driver.manage().timeouts().pageLoadTimeout(60, TimeUnit.SECONDS);
+			driver.manage().timeouts().implicitlyWait(60, TimeUnit.SECONDS);
+		} else {
+			try {
+				System.setProperty("webdriver.chrome.driver", "./Drivers/geckodriver.exe");
+			} catch (Exception e) {
+				WebDriverManager.firefoxdriver().setup();
+			}
+			driver = new FirefoxDriver();
+			driver.manage().timeouts().pageLoadTimeout(60, TimeUnit.SECONDS);
+			driver.manage().timeouts().implicitlyWait(60, TimeUnit.SECONDS);
 
-			e.printStackTrace();
 		}
 		return driver;
 
 	}
 
 	public void launchURL(String url) {
-		try {
-			driver.get(url);
-			System.out.println("URL launched");
-		} catch (Exception e) {
-			
-			e.printStackTrace();
-		}
-		
+		driver.get(url);
+		System.out.println("URL launched");
+
 	}
 
 	public boolean isEmpty(WebElement ele) {
@@ -87,7 +77,7 @@ public class UtileClass {
 	}
 
 	public Alert alertIsPresent() {
-
+		WebDriverWait wait = new WebDriverWait(driver, 20);
 
 		return wait.until(ExpectedConditions.alertIsPresent());
 
@@ -95,6 +85,8 @@ public class UtileClass {
 
 	public void waitForTheFrame(WebElement element) {
 		try {
+			WebDriverWait wait = new WebDriverWait(driver, 20);
+
 			wait.until(ExpectedConditions.frameToBeAvailableAndSwitchToIt(element));
 		} catch (Exception e) {
 
@@ -106,6 +98,7 @@ public class UtileClass {
 
 		try {
 			WebDriverWait wait = new WebDriverWait(driver, 20);
+
 			element = wait.until(ExpectedConditions.visibilityOf(element));
 		} catch (Exception e) {
 			e.printStackTrace();
@@ -116,6 +109,7 @@ public class UtileClass {
 	public WebElement waitForTheElement(WebElement element) {
 		try {
 			WebDriverWait wait = new WebDriverWait(driver, 20);
+
 			element = wait.until(ExpectedConditions.elementToBeClickable(element));
 		} catch (Exception e) {
 			e.printStackTrace();
@@ -152,6 +146,8 @@ public class UtileClass {
 	public void waitForTextBoxEnable(WebElement ele, String str) {
 
 		try {
+			WebDriverWait wait = new WebDriverWait(driver, 20);
+
 			wait.until(ExpectedConditions.visibilityOf(ele)).sendKeys(str);
 		} catch (Exception e) {
 			e.printStackTrace();
@@ -171,6 +167,8 @@ public class UtileClass {
 
 	public boolean isDisplayed(WebElement val) {
 		try {
+			WebDriverWait wait = new WebDriverWait(driver, 20);
+
 			wait.until(ExpectedConditions.visibilityOf(val));
 			empty = val.isDisplayed();
 		} catch (Exception e) {

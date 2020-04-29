@@ -1,3 +1,7 @@
+com\page\repo\AddTariffPOM.class
 com\page\repo\AddCustomerPOM.class
-com\page\repo\HomePagePOM.class
 com\utile\files\UtileClass.class
+com\page\repo\PaayBillPOM.class
+com\data\provider\DataDriven.class
+com\page\repo\AddTariffToCustomerPOM.class
+com\page\repo\HomePagePOM.class
