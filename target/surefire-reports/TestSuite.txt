@@ -1,26 +1,8 @@
 -------------------------------------------------------------------------------
 Test set: TestSuite
 -------------------------------------------------------------------------------
-Tests run: 1, Failures: 1, Errors: 0, Skipped: 0, Time elapsed: 85.694 s <<< FAILURE! - in TestSuite
-com.test.runner.RunnerTest.feature  Time elapsed: 78.518 s  <<< FAILURE!
-cucumber.runtime.CucumberException: 
-org.openqa.selenium.NoSuchWindowException: no such window: target window already closed
-from unknown error: web view not found
-  (Session info: chrome=81.0.4044.122)
-Build info: version: '3.141.59', revision: 'e82be7d358', time: '2018-11-14T08:17:03'
-System info: host: 'DESKTOP-FBD16EE', ip: '192.168.43.132', os.name: 'Windows 10', os.arch: 'amd64', os.version: '10.0', java.version: '1.8.0_231'
-Driver info: org.openqa.selenium.chrome.ChromeDriver
-Capabilities {acceptInsecureCerts: false, browserName: chrome, browserVersion: 81.0.4044.122, chrome: {chromedriverVersion: 80.0.3987.106 (f68069574609..., userDataDir: C:\Users\KARTHI~1\AppData\L...}, goog:chromeOptions: {debuggerAddress: localhost:63177}, javascriptEnabled: true, networkConnectionEnabled: false, pageLoadStrategy: normal, platform: WINDOWS, platformName: WINDOWS, proxy: Proxy(), setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify}
-Session ID: f511d0edff7c7a0fe680f86d7290fc2b
-*** Element info: {Using=xpath, value=//div[@id='closeBtn']}
-Caused by: org.openqa.selenium.NoSuchWindowException: 
-no such window: target window already closed
-from unknown error: web view not found
-  (Session info: chrome=81.0.4044.122)
-Build info: version: '3.141.59', revision: 'e82be7d358', time: '2018-11-14T08:17:03'
-System info: host: 'DESKTOP-FBD16EE', ip: '192.168.43.132', os.name: 'Windows 10', os.arch: 'amd64', os.version: '10.0', java.version: '1.8.0_231'
-Driver info: org.openqa.selenium.chrome.ChromeDriver
-Capabilities {acceptInsecureCerts: false, browserName: chrome, browserVersion: 81.0.4044.122, chrome: {chromedriverVersion: 80.0.3987.106 (f68069574609..., userDataDir: C:\Users\KARTHI~1\AppData\L...}, goog:chromeOptions: {debuggerAddress: localhost:63177}, javascriptEnabled: true, networkConnectionEnabled: false, pageLoadStrategy: normal, platform: WINDOWS, platformName: WINDOWS, proxy: Proxy(), setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify}
-Session ID: f511d0edff7c7a0fe680f86d7290fc2b
-*** Element info: {Using=xpath, value=//div[@id='closeBtn']}
+Tests run: 1, Failures: 1, Errors: 0, Skipped: 0, Time elapsed: 6.002 s <<< FAILURE! - in TestSuite
+com.test.runner.RunnerTest.feature  Time elapsed: 1.319 s  <<< FAILURE!
+cucumber.runtime.CucumberException: cucumber.runtime.CucumberException: When a hook declares an argument it must be of type cucumber.api.Scenario. public void com.step.definision.Hooks.launcher(java.lang.String)
+Caused by: cucumber.runtime.CucumberException: When a hook declares an argument it must be of type cucumber.api.Scenario. public void com.step.definision.Hooks.launcher(java.lang.String)
 

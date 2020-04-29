@@ -39,7 +39,7 @@ public class UtileClass {
 			driver.manage().window().maximize();
 			driver.manage().timeouts().pageLoadTimeout(60, TimeUnit.SECONDS);
 			driver.manage().timeouts().implicitlyWait(60, TimeUnit.SECONDS);
-		} else {
+		} else if(browser.equalsIgnoreCase("FF")) {
 			try {
 				System.setProperty("webdriver.chrome.driver", "./Drivers/geckodriver.exe");
 			} catch (Exception e) {

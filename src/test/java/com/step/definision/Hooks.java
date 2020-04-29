@@ -6,6 +6,8 @@ import java.io.IOException;
 import org.apache.commons.io.FileUtils;
 import org.openqa.selenium.OutputType;
 import org.openqa.selenium.TakesScreenshot;
+import org.testng.annotations.Parameters;
+
 import com.utile.files.UtileClass;
 
 import cucumber.api.Scenario;
@@ -21,9 +23,10 @@ public class Hooks {
 		utileClass.launch("chrome");
 	}
 
+	@Parameters({ "Browser" })
 	@Before(value = "@tariffPlan")
-	public void launcher() {
-		utileClass.launch("chrome");
+	public void launcher(String browser) {
+		utileClass.launch(browser);
 		utileClass.launchURL(utileClass.readPro("URL"));
 	}
 
