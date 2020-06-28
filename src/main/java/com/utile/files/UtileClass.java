@@ -30,16 +30,13 @@ public class UtileClass {
 	public WebDriver launch(String browser) {
 
 		if (browser.equalsIgnoreCase("chrome")) {
-			try {
-				System.setProperty("webdriver.chrome.driver", "./Drivers/chromedriver.exe");
-			} catch (Exception e) {
-				WebDriverManager.chromedriver().setup();
-			}
+			WebDriverManager.chromedriver().setup();
+
 			driver = new ChromeDriver();
 			driver.manage().window().maximize();
 			driver.manage().timeouts().pageLoadTimeout(60, TimeUnit.SECONDS);
 			driver.manage().timeouts().implicitlyWait(60, TimeUnit.SECONDS);
-		} else if(browser.equalsIgnoreCase("FF")) {
+		} else if (browser.equalsIgnoreCase("FF")) {
 			try {
 				System.setProperty("webdriver.chrome.driver", "./Drivers/geckodriver.exe");
 			} catch (Exception e) {
