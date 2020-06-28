@@ -18,7 +18,7 @@ public class Hooks {
 
 	UtileClass utileClass = new UtileClass();
 
-	@Before(value = "@AddCustomer")
+	//@Before(value = "@AddCustomer")
 	public void launchBrowser() {
 		utileClass.launch("chrome");
 	}
